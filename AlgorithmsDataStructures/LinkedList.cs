@@ -62,6 +62,10 @@ namespace AlgorithmsDataStructures
             if (head.value == _value)
             {
                 head = head.next;
+                if (tail.value == _value)
+                {
+                    tail = null;
+                }
                 return true;
             }
 
