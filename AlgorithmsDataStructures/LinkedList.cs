@@ -13,8 +13,8 @@ namespace AlgorithmsDataStructures
 
     public class LinkedList
     {
-        public Node head;
-        public Node tail;
+        public Node head; 
+        public Node tail; 
 
         public LinkedList()
         {
@@ -24,8 +24,14 @@ namespace AlgorithmsDataStructures
 
         public void AddInTail(Node _item)
         {
-            if (head == null) head = _item;
-            else tail.next = _item;
+            if (head == null)
+            {
+                head = _item;
+            }
+            else
+            {
+                tail.next = _item;
+            }
             tail = _item;
         }
 
@@ -34,9 +40,14 @@ namespace AlgorithmsDataStructures
             Node node = head;
             while (node != null)
             {
-                if (node.value == _value) return node;
+                if (node.value == _value)
+                {
+                    return node;
+                }
+
                 node = node.next;
             }
+
             return null;
         }
 
