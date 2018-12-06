@@ -70,6 +70,11 @@ namespace AlgorithmsDataStructures
 
         public bool Remove(int _value)
         {
+            if (head == null)
+            {
+                return false;
+            }
+
             if (head.value == _value)
             {
                 if (tail == head)
