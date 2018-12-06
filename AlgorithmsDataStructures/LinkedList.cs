@@ -72,11 +72,11 @@ namespace AlgorithmsDataStructures
         {
             if (head.value == _value)
             {
-                head = head.next;
-                if (tail.value == _value)
+                if (tail == head)
                 {
                     tail = null;
                 }
+                head = head.next;
                 return true;
             }
 
