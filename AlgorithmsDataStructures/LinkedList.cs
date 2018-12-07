@@ -4,17 +4,17 @@ using System.Collections.Generic;
 namespace AlgorithmsDataStructures
 {
 
-    public class Node
+    public class NodeOld
     {
         public int value;
-        public Node next;
-        public Node(int _value) { value = _value; }
+        public NodeOld next;
+        public NodeOld(int _value) { value = _value; }
     }
 
     public class LinkedList
     {
-        public Node head; 
-        public Node tail; 
+        public NodeOld head; 
+        public NodeOld tail; 
 
         public LinkedList()
         {
@@ -22,7 +22,7 @@ namespace AlgorithmsDataStructures
             tail = null;
         }
 
-        public void AddInTail(Node _item)
+        public void AddInTail(NodeOld _item)
         {
             if (head == null)
             {
@@ -35,9 +35,9 @@ namespace AlgorithmsDataStructures
             tail = _item;
         }
 
-        public Node Find(int _value)
+        public NodeOld Find(int _value)
         {
-            Node node = head;
+            NodeOld node = head;
             while (node != null)
             {
                 if (node.value == _value)
@@ -51,10 +51,10 @@ namespace AlgorithmsDataStructures
             return null;
         }
 
-        public List<Node> FindAll(int _value)
+        public List<NodeOld> FindAll(int _value)
         {
-            List<Node> nodes = new List<Node>();
-            Node node = head;
+            List<NodeOld> nodes = new List<NodeOld>();
+            NodeOld node = head;
             while (node != null)
             {
                 if (node.value == _value)
@@ -85,8 +85,8 @@ namespace AlgorithmsDataStructures
                 return true;
             }
 
-            Node previousNode = head;
-            Node node = head.next;
+            NodeOld previousNode = head;
+            NodeOld node = head.next;
 
             while (node != null)
             {
@@ -109,7 +109,7 @@ namespace AlgorithmsDataStructures
 
         public void RemoveAll(int _value)
         {
-            Node node = head;
+            NodeOld node = head;
             while (node != null)
             {
                 Remove(_value);
@@ -125,7 +125,7 @@ namespace AlgorithmsDataStructures
 
         public int Count()
         {
-            Node node = head;
+            NodeOld node = head;
 
             int count = 0;
 
@@ -138,9 +138,9 @@ namespace AlgorithmsDataStructures
             return count;
         }
 
-        public bool InsertAfter(Node _nodeAfter, Node _nodeToInsert)
+        public bool InsertAfter(NodeOld _nodeAfter, NodeOld _nodeToInsert)
         {
-            Node node = head;
+            NodeOld node = head;
 
             if (node == null)
             {
