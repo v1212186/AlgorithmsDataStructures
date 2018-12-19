@@ -6,19 +6,19 @@ namespace Project.Code.DynamicArrayExample
     {
         public const int DefaultCapacity = 16;
 
-        private int count;
+        public int count;
         public int Count
         {
             get { return count; }
         }
 
-        private int capacity;
+        public int capacity;
         public int Capacity
         {
             get { return capacity; }
         }
 
-        private T[]
+        public T[]
             array; //можно было заменить nullable int на просто object, но для упрощения тестирования GetItem() оставил так
 
         public DynArray()
