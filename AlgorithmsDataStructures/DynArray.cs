@@ -39,7 +39,7 @@ namespace AlgorithmsDataStructures
             T[] newArray = new T[capacity];
             for (int i = 0; i < count; i++)
             {
-                if (i >= capacity) //если новое значение capacity меньше чем count, "обрезаем" оставшиеся элементы
+                if (i >= capacity)
                 {
                     count = capacity;
                     break;
