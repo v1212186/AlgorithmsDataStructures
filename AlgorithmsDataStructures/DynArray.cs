@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Project.Code.DynamicArrayExample
+namespace AlgorithmsDataStructures
 {
     public class DynArray<T>
     {
