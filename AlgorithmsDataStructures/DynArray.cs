@@ -19,7 +19,7 @@ namespace AlgorithmsDataStructures
         }
 
         public T[]
-            array; //можно было заменить nullable int на просто object, но для упрощения тестирования GetItem() оставил так
+            array;
 
         public DynArray()
         {
@@ -27,7 +27,7 @@ namespace AlgorithmsDataStructures
             MakeArray(DefaultCapacity);
         }
 
-        //Сложность O(n), где n - count, то есть количество копируемых элементов
+
         public void MakeArray(int _newCapacity)
         {
             capacity = _newCapacity;
@@ -51,7 +51,7 @@ namespace AlgorithmsDataStructures
             array = newArray;
         }
 
-        //Сложность O(1), прямой доступ по индексу
+
         public T GetItem(int _index)
         {
             if (_index < 0 || _index >= count)
@@ -62,7 +62,6 @@ namespace AlgorithmsDataStructures
             return array[_index];
         }
 
-        //Сложность O(1) при условии, что новый count не превысит capacity и O(n), где n - count, при превышении capacity
         public void Append(T _item)
         {
             if (count + 1 > capacity)
@@ -75,8 +74,7 @@ namespace AlgorithmsDataStructures
             array[count - 1] = _item;
         }
 
-        //Сложность O(count - _index), то есть количество элементов, которые необходимо сдвинуть при условии, что новый count не превысит capacity
-        //Сложность O(n), где n - count, при превышении capacity (копируем элементы до _index и сдвигаем (count - _index) элементов)
+
         public void Insert(T _item, int _index)
         {
             if (_index < 0 ||_index > count)
@@ -86,8 +84,6 @@ namespace AlgorithmsDataStructures
 
             count++;
 
-            //не использовал MakeArray, иначе при вставке в начало сложность выросла бы до ~O(n^2) в худшем случае(вставка в начало)
-            //так как пришлось бы сначала скопировать все элементы, а потом их все сдвинуть
             if (count >= capacity)
             {
                 capacity = SizeUp(capacity);
@@ -124,8 +120,7 @@ namespace AlgorithmsDataStructures
             array[_index] = _item;
         }
 
-        //Сложность O(count - _index), то есть количество элементов, которые необходимо сдвинуть при условии, что новый count не превысит capacity
-        //Сложность O(n), где n - count, при превышении capacity (копируем элементы до _index и сдвигаем (count - _index) элементов)
+
         public void Remove(int _index)
         {
             if (_index < 0 ||_index >= count)
